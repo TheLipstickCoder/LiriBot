@@ -46,7 +46,7 @@ function runBands(userRequest) {
                 var currData = `\n
     Venue: ${response.data[i].venue.name}
     Location: ${response.data[i].venue.city + ", " + response.data[0].venue.region}
-    Event Date: ${moment(response.data[i].datetime).format('LL')}
+    Event Date: ${moment(show.datetime).format("MM/DD/YYYY")}
             `
             console.log(currData)
             }
@@ -54,13 +54,13 @@ function runBands(userRequest) {
         }
     );
     }
-}
+};
 
 //function for Spotify
-function spotify(userRequest) {
+function runSpot(userRequest) {
 
     if (userRequest === "") {
-        userRequest = "The+Sign"
+        userRequest = "Black Effect"
     }
 
     spotify.search({
@@ -77,4 +77,30 @@ function spotify(userRequest) {
 	        console.log("Hear this song at " + songInfo[0].preview_url);
 	        console.log("This song can be found on  " + songInfo[0].album.name);
 });
-}
+};
+
+//FUNCTION FOR MOVIES
+var runMovie = function(userReq) {
+    if (userReq === undefined) {
+      userReq = 'Crooklyn';
+    }
+  
+    var queryURL =
+      "http://www.omdbapi.com/?t=" + userReq + "&y=&plot=full&tomatoes=true&apikey=trilogy";
+  
+    axios.get(queryURL).then(
+      function(response) {
+        var movieDetails = response.data;
+  
+        console.log("Title: " + movieDetails.Title);
+        console.log("Year: " + movieDetails.Year);
+        console.log("Rated: " + movieDetails.Rated);
+        console.log("IMDB Rating: " + movieDetails.imdbRating);
+        console.log("Country: " + movieDetails.Country);
+        console.log("Language: " + movieDetails.Language);
+        console.log("Plot: " + movieDetails.Plot);
+        console.log("Actors: " + movieDetails.Actors);
+        console.log("Rotten Tomatoes Rating: " + movieDetails.Ratings[1].Value);
+      }
+    );
+  };
