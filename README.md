@@ -11,10 +11,10 @@ This app will allow you, as the user, to use the BandsInTown API to see concerts
 While the app is not fully functional now, it should do the following based on the commands below:
 
  - concert-this *Band Name or Artist here* will return information from BandsInTown using the axios package to display upcoming events to the client. 
- !(/concert-this)
+ ![picture](/concert-this.png)
 
 - spotify-this *Song name here* will return information from Spotify using the axios package to display the artist, album, and a preview link of the song.
-!(/spotify-this)
+![picture](/spotify-this.png)
 
 - movie-this *Movie Title here* will return information using the OMDB API using the axios package to display the following:
   * Title of the movie.
@@ -25,7 +25,7 @@ While the app is not fully functional now, it should do the following based on t
   * Language of the movie.
   * Plot of the movie.
   * Actors in the movie
-!(/movie-this)
+![picture](/movie-this.png)
 
 - do-what-it-says will use the fs package to run an API call based on information stored in the random.txt file
-!(/do-what-it-says)
+![picture](/do-what-it-says.png)
